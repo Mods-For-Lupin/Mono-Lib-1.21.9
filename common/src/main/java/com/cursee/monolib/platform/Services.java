@@ -1,7 +1,7 @@
-package com.cursee.examplemod.platform;
+package com.cursee.monolib.platform;
 
-import com.cursee.examplemod.Constants;
-import com.cursee.examplemod.platform.services.IPlatformHelper;
+import com.cursee.monolib.Constants;
+import com.cursee.monolib.platform.services.IPlatformHelper;
 import java.util.ServiceLoader;
 
 // Service loaders are a built-in Java feature that allow us to locate implementations of an interface that vary from one

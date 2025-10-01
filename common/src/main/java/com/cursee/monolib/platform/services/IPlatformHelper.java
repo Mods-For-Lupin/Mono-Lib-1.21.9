@@ -1,4 +1,4 @@
-package com.cursee.examplemod.platform.services;
+package com.cursee.monolib.platform.services;
 
 import java.nio.file.Path;
 
