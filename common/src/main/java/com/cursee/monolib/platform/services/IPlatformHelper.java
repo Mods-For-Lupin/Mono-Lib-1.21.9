@@ -11,6 +11,8 @@ public interface IPlatformHelper {
    */
   String getPlatformName();
 
+  String getGameVersion();
+
   /**
    * Checks if a mod with the given id is loaded.
    *

@@ -14,6 +14,11 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
   }
 
   @Override
+  public String getGameVersion() {
+    return FMLLoader.getCurrent().getVersionInfo().mcVersion();
+  }
+
+  @Override
   public boolean isModLoaded(String modId) {
 
     return ModList.get().isLoaded(modId);

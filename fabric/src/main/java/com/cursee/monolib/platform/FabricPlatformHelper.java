@@ -12,6 +12,11 @@ public class FabricPlatformHelper implements IPlatformHelper {
   }
 
   @Override
+  public String getGameVersion() {
+    return FabricLoader.getInstance().getRawGameVersion();
+  }
+
+  @Override
   public boolean isModLoaded(String modId) {
 
     return FabricLoader.getInstance().isModLoaded(modId);
