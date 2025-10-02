@@ -2,6 +2,7 @@ package com.cursee.monolib;
 
 
 import com.cursee.monolib.impl.common.registry.MonoLibCommands;
+import com.cursee.monolib.impl.common.sailing.SailingServerHelper;
 import com.mojang.brigadier.CommandDispatcher;
 import java.util.function.Consumer;
 import net.minecraft.commands.CommandBuildContext;
@@ -14,6 +15,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.javafmlmod.FMLModContainer;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.event.server.ServerStartedEvent;
 
 @Mod(Constants.MOD_ID)
 public class MonoLibNeoForge {
@@ -23,9 +25,10 @@ public class MonoLibNeoForge {
   public MonoLibNeoForge(IEventBus modEventBus, FMLModContainer fmlModContainer, Dist dist) {
     MonoLibNeoForge.modEventBus = modEventBus;
     MonoLib.init();
-    if (dist == Dist.CLIENT) new MonoLibClientNeoForge(modEventBus, fmlModContainer);
+    if (dist == Dist.CLIENT) new MonoLibClientNeoForge(MonoLibNeoForge.modEventBus, fmlModContainer);
 
     NeoForge.EVENT_BUS.addListener(this::onRegisterCommands);
+    NeoForge.EVENT_BUS.addListener(this::onServerStarted);
   }
 
   private void onRegisterCommands(RegisterCommandsEvent event) {
@@ -33,5 +36,9 @@ public class MonoLibNeoForge {
     CommandBuildContext commandBuildContext = event.getBuildContext();
     CommandSelection commandSelection = event.getCommandSelection();
     MonoLibCommands.registerModCommands(commandDispatcher, commandBuildContext, commandSelection);
+  }
+
+  private void onServerStarted(ServerStartedEvent event) {
+    SailingServerHelper.onServerStarted(event.getServer());
   }
 }

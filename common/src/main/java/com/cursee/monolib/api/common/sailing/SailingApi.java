@@ -13,7 +13,7 @@ public class SailingApi {
   /**
    * Players tagged with this String will bypass the check made by Sailing
    */
-  public static final String CHECKED = Constants.MOD_ID + ".sailing";
+  public static final String CHECKED_TAG = Constants.MOD_ID + ".sailing";
 
   /**
    * @param modID        the namespace of the mod used in the jar filename

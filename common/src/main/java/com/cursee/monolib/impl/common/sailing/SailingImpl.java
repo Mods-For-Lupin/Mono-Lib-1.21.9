@@ -3,7 +3,6 @@ package com.cursee.monolib.impl.common.sailing;
 import com.cursee.monolib.platform.Services;
 import java.util.HashMap;
 import java.util.Map;
-import net.minecraft.SharedConstants;
 
 public class SailingImpl {
 
@@ -11,7 +10,7 @@ public class SailingImpl {
   private static final Map<String, String> FILENAME_TO_MOD_NAME = new HashMap<>();
   /// Maps mod display names to their respective {@link SailingEntry} instance
   private static final Map<String, SailingEntry> MOD_NAME_TO_ENTRY = new HashMap<>();
-  /// This instance is assumed to be unverified until the Sailing check occurs to determine value
+  /// This instance is assumed to be unverified until the Sailing check determines otherwise
   public static boolean unverified = true;
 
   public static void register(String modID, String modName, String modVersion, String modPublisher, String modURL) {
