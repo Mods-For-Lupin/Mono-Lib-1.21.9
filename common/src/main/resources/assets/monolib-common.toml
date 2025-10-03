@@ -1,0 +1,5 @@
+# Determines whether additional text will be logged to the system console.
+debugging = false
+
+# Determines whether JAR files in the root/mods directory will be validated against registered mod filenames.
+verify_mod_files = true

@@ -13,12 +13,12 @@ public class SailingMessage {
   public static void sendMessage(Player player, String message, ChatFormatting colour,
       boolean insertNewLineBeforeMessage, String url) {
 
-      if (message.isEmpty()) {
-          return;
-      }
-      if (insertNewLineBeforeMessage) {
-          player.displayClientMessage(Component.literal(""), false);
-      }
+    if (message.isEmpty()) {
+      return;
+    }
+    if (insertNewLineBeforeMessage) {
+      player.displayClientMessage(Component.literal(""), false);
+    }
 
     MutableComponent mutableMessage = Component.literal(message);
     mutableMessage.withStyle(colour);

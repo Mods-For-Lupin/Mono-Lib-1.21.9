@@ -9,12 +9,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MonoLibClient {
+public class MonoLibServer {
 
   public static boolean debugModeEnabled = false;
 
   public static void init() {
-    MonoLibClient.createOrLoadConfiguration();
+    MonoLibServer.createOrLoadConfiguration();
   }
 
   private static void createOrLoadConfiguration() {

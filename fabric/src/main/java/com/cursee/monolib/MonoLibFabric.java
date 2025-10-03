@@ -18,12 +18,17 @@ public class MonoLibFabric implements ModInitializer {
     MonoLib.init();
 
     CommandRegistrationCallback.EVENT.register(this::onRegisterCommands);
+    ServerLifecycleEvents.SERVER_STARTING.register(this::onServerStarting);
     ServerLifecycleEvents.SERVER_STARTED.register(this::onServerStarted);
   }
 
   private void onRegisterCommands(CommandDispatcher<CommandSourceStack> commandDispatcher,
       CommandBuildContext commandBuildContext, CommandSelection commandSelection) {
     MonoLibCommands.registerModCommands(commandDispatcher, commandBuildContext, commandSelection);
+  }
+
+  private void onServerStarting(MinecraftServer server) {
+    MonoLibServer.init();
   }
 
   private void onServerStarted(MinecraftServer server) {

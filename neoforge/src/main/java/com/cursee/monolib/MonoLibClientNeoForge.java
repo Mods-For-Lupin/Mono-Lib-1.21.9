@@ -1,11 +1,8 @@
 package com.cursee.monolib;
 
 import com.cursee.monolib.impl.common.sailing.SailingClientHelper;
-import java.util.function.Consumer;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.javafmlmod.FMLModContainer;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
@@ -22,7 +19,8 @@ public class MonoLibClientNeoForge {
   }
 
   private void onEntityJoinLevel(EntityJoinLevelEvent event) {
-    if (!(event.getEntity() instanceof LocalPlayer player && event.getLevel() instanceof ClientLevel level)) {
+    if (!(event.getEntity() instanceof LocalPlayer player
+        && event.getLevel() instanceof ClientLevel level)) {
       return;
     }
     SailingClientHelper.onPlayerJoinClientLevel(player, level);
