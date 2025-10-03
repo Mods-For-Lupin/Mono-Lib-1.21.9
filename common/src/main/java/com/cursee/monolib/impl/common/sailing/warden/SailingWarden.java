@@ -20,9 +20,9 @@ public class SailingWarden {
 
   public static void process(String modsDirectory) {
 
-      if (!MonoLib.shouldVerifyMods) {
-          return;
-      }
+    if (!MonoLib.shouldVerifyMods) {
+      return;
+    }
 
     final DomainRules domainRules = DomainRules.builtin();
 
@@ -37,9 +37,9 @@ public class SailingWarden {
       throw new IllegalArgumentException("Invalid path specified. '" + modsDirectory + "'");
     }
 
-      if (SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.isEmpty()) {
-          return; // no unsafe downloads found
-      }
+    if (SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.isEmpty()) {
+      return; // no unsafe downloads found
+    }
 
     Constants.LOG.info("Unsafe download(s):");
     for (String key : SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.keySet()) {

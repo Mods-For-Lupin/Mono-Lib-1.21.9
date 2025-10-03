@@ -23,13 +23,13 @@ public class SailingServerHelper {
       return;
     }
 
-    if (!SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.isEmpty()) {
-      Constants.LOG.info("Unsafe download(s):");
-      for (String key : SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.keySet()) {
-        Constants.LOG.info("- {} from {}", key,
-            SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.get(key));
-      }
-    }
+//    if (!SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.isEmpty()) {
+//      Constants.LOG.info("Unsafe download(s):");
+//      for (String key : SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.keySet()) {
+//        Constants.LOG.info("- {} from {}", key,
+//            SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.get(key));
+//      }
+//    }
 
     SailingImpl.verified = verifyModFiles();
   }

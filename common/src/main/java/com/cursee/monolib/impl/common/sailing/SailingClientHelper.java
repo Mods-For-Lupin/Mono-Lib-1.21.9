@@ -33,17 +33,18 @@ public class SailingClientHelper {
       return;
     }
 
-    if (!SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.isEmpty()) {
-      SailingMessage.sendMessage(player, "Unsafe download(s):", ChatFormatting.WHITE);
-      Constants.LOG.info("Unsafe download(s):");
-      for (String key : SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.keySet()) {
-        SailingMessage.sendMessage(player,
-            "- " + key + " from " + SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.get(key),
-            ChatFormatting.WHITE);
-        Constants.LOG.info("- {} from {}", key,
-            SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.get(key));
-      }
-    }
+    // ??? duplicate? SailingWarden#process already called
+//    if (!SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.isEmpty()) {
+//      SailingMessage.sendMessage(player, "Unsafe download(s):", ChatFormatting.WHITE);
+//      Constants.LOG.info("Unsafe download(s):");
+//      for (String key : SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.keySet()) {
+//        SailingMessage.sendMessage(player,
+//            "- " + key + " from " + SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.get(key),
+//            ChatFormatting.WHITE);
+//        Constants.LOG.info("- {} from {}", key,
+//            SailingWarden.UNSAFE_PATH_TO_UNSAFE_HOST_MAP.get(key));
+//      }
+//    }
 
     verifyModFiles(player);
     player.addTag(SailingApi.CHECKED_TAG);
