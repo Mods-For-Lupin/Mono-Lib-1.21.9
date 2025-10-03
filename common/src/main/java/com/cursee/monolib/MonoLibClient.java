@@ -52,8 +52,8 @@ public class MonoLibClient {
           bos.write(buffer, 0, bytesRead);
         }
       } catch (IOException e) {
-        System.out.println("Failed to copy default config file, error: " + e.getMessage());
-        System.out.println("Configuration will retain default values.");
+        Constants.LOG.info("Failed to copy default config file, error: " + e.getMessage());
+        Constants.LOG.info("Configuration will retain default values.");
       }
 
 //      TomlWriter writer = new TomlWriter();

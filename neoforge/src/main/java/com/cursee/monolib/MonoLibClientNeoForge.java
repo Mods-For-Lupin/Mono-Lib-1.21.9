@@ -5,6 +5,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.javafmlmod.FMLModContainer;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 
 public class MonoLibClientNeoForge {
@@ -15,7 +16,7 @@ public class MonoLibClientNeoForge {
     MonoLibClientNeoForge.modEventBus = modEventBus;
     MonoLibClient.init();
 
-    modEventBus.addListener(this::onEntityJoinLevel);
+    NeoForge.EVENT_BUS.addListener(this::onEntityJoinLevel);
   }
 
   private void onEntityJoinLevel(EntityJoinLevelEvent event) {

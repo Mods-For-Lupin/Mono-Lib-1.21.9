@@ -27,7 +27,7 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
   @Override
   public boolean isDevelopmentEnvironment() {
 
-    return FMLLoader.getCurrentOrNull() != null && FMLLoader.getCurrent().isProduction();
+    return !FMLLoader.getCurrent().isProduction();
   }
 
   @Override

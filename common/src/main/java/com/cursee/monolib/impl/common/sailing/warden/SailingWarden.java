@@ -31,7 +31,7 @@ public class SailingWarden {
         // Constants.LOG.info("No matching files were found.");
         Constants.LOG.info("Warden did not detect any unsafe JAR files in {}", modsDirectory);
         Constants.LOG.info(
-            "You can disable this message by setting \"verify_jar_files\" in config/monolib-common.toml to false.");
+            "You can disable this message by setting \"verify_mod_files\" in config/monolib-common.toml to false.");
       }
     } catch (InvalidPathException e) {
       throw new IllegalArgumentException("Invalid path specified. '" + modsDirectory + "'");
@@ -59,7 +59,7 @@ public class SailingWarden {
       final ZoneIdentifier zoneId = ZoneIdentifier.of(target);
       if (zoneId != null && rules.test(zoneId)) {
 
-        // System.out.println("File='" + target + "' host='" + zoneId.getHost() + "' referrer='" + zoneId.getReferrer() + "'.");
+        // Constants.LOG.info("File='" + target + "' host='" + zoneId.getHost() + "' referrer='" + zoneId.getReferrer() + "'.");
 
         UNSAFE_PATH_TO_UNSAFE_HOST_MAP.put(target.getName(), zoneId.getHost());
         hasMatch = true;

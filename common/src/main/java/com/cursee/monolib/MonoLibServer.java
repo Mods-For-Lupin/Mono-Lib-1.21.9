@@ -20,7 +20,7 @@ public class MonoLibServer {
   private static void createOrLoadConfiguration() {
 
     String configDirString = Services.PLATFORM.getGameDirectory() + File.separator + "config";
-    String configFileString = configDirString + File.separator + "monolib-client.toml";
+    String configFileString = configDirString + File.separator + "monolib-server.toml";
 
     File configDir = new File(configDirString);
     if (!configDir.isDirectory() && !configDir.mkdirs()) {
@@ -35,7 +35,7 @@ public class MonoLibServer {
 
       // loads internal file from JAR and writes to file location
       InputStream ioStream = MonoLib.class.getClassLoader()
-          .getResourceAsStream("assets/monolib-client.toml");
+          .getResourceAsStream("assets/monolib-server.toml");
 
       if (ioStream == null) {
         Constants.LOG.info("Could not load internal file... config will retain default values.");
@@ -52,8 +52,8 @@ public class MonoLibServer {
           bos.write(buffer, 0, bytesRead);
         }
       } catch (IOException e) {
-        System.out.println("Failed to copy default config file, error: " + e.getMessage());
-        System.out.println("Configuration will retain default values.");
+        Constants.LOG.info("Failed to copy default config file, error: " + e.getMessage());
+        Constants.LOG.info("Configuration will retain default values.");
       }
 
 //      TomlWriter writer = new TomlWriter();
