@@ -39,11 +39,11 @@ public class ZoneIdentifier {
         String line;
 
         while ((line = reader.readLine()) != null && (referrer == null || host == null)) {
-            if (line.startsWith(REFERRER_URL)) {
-                referrer = stripInfo(line.substring(REFERRER_URL.length()));
-            } else if (line.startsWith(HOST_URL)) {
-                host = stripInfo(line.substring(HOST_URL.length()));
-            }
+          if (line.startsWith(REFERRER_URL)) {
+            referrer = stripInfo(line.substring(REFERRER_URL.length()));
+          } else if (line.startsWith(HOST_URL)) {
+            host = stripInfo(line.substring(HOST_URL.length()));
+          }
         }
 
         return new ZoneIdentifier(host, referrer);
