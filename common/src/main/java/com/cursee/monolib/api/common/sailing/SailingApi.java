@@ -1,6 +1,7 @@
 package com.cursee.monolib.api.common.sailing;
 
 import com.cursee.monolib.Constants;
+import com.cursee.monolib.impl.common.sailing.SailingImpl;
 
 /**
  * Registers mods to check that they exist in the {@code mods} directory with the expected filename.
@@ -25,5 +26,6 @@ public class SailingApi {
    */
   public static void register(String modID, String modName, String modVersion, String modPublisher,
       String modURL) {
+    SailingImpl.register(modID, modName, modVersion, modPublisher, modURL);
   }
 }
