@@ -53,6 +53,15 @@ repositories {
 }
 
 jar {
+
+    from(rootProject.file('LICENSE_Bookshelf.txt'))
+    from(rootProject.file('LICENSE_toml4j.txt'))
+    from(rootProject.file('LICENSE_Warden.txt'))
+
+    from(rootProject.file('LICENSE')) {
+        rename { "${it}_${mod_name}.txt" }
+    }
+
     manifest {
         attributes([
                 'Specification-Title'   : mod_name,
